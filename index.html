@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Guide Michelin - Scrollytelling Expérience</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ui-michelin-red: #9a1727;
+        --ui-michelin-light-gray: #f5f5f5;
+        --ui-michelin-dark-gray: #333333;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--ui-michelin-red); /* Rouge Michelin officiel */
+        color: #ffffff;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      /* Conteneur de la ligne SVG fixe en arrière-plan */
+      #svg-background {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 100vh;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .section-scroll {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      /* Animation au survol des boutons */
+      .cta-button {
+        transition:
+          transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.3s ease;
+      }
+      .cta-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="svg-background">
+      <svg
+        viewBox="0 0 300 1200"
+        preserveAspectRatio="none"
+        class="w-full h-full"
+      >
+        <path
+          id="path-guide"
+          d="M 150 0 C 250 150, 50 300, 150 450 C 250 600, 50 750, 150 900 C 250 1050, 150 1150, 150 1200"
+          fill="none"
+          stroke="white"
+          stroke-width="3"
+          stroke-linecap="round"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+    </div>
+
+    <main id="smooth-wrapper" class="relative">
+      <section class="section-scroll">
+        <img
+          src="Logo 1.svg"
+          alt="Le Guide Michelin"
+          class="w-64 mb-12 anim-reveal relative z-10"
+        />
+      </section>
+
+      <section class="section-scroll">
+        <div
+          class="anim-reveal max-w-2xl italic text-3xl font-light leading-snug"
+        >
+          " Le plaisir de la table est de tous les âges, de toutes les
+          conditions "
+        </div>
+        <div
+          class="anim-reveal mt-6 text-sm font-semibold tracking-widest opacity-80 uppercase"
+        >
+          Jean Anthelme Brillat-Savarin
+          <span class="block font-light italic normal-case mt-1 text-xs"
+            >- La physiologie du goût -</span
+          >
+        </div>
+      </section>
+
+      <section class="section-scroll">
+        <h2 class="anim-reveal max-w-xl text-3xl font-medium leading-tight">
+          Et tu penses encore que tous les plats raffinés coûtent un bras ?
+        </h2>
+      </section>
+
+      <section class="section-scroll">
+        <p class="anim-reveal max-w-2xl text-2xl leading-relaxed">
+          Le goût de nos experts n’a jamais été aussi aligné avec l’équilibre
+          entre <br />
+          <span class="font-bold text-4xl block mt-2">QUALITÉ & PRIX</span>
+        </p>
+      </section>
+
+      <section class="section-scroll">
+        <p class="anim-reveal max-w-lg text-2xl">
+          Découvre leur sélection de restaurants à portée de
+          <span class="font-bold underline decoration-2 underline-offset-4"
+            >main</span
+          >...
+        </p>
+        <p class="anim-reveal mt-4 text-2xl italic font-light opacity-90">
+          ... et de prix !
+        </p>
+      </section>
+
+      <section class="section-scroll">
+        <div class="anim-reveal flex flex-col items-center gap-8">
+          <span class="text-3xl font-light"
+            >On les appelle les
+            <span class="font-bold">Bibs Gourmands</span></span
+          >
+          <img
+            src="Logo 2.svg"
+            alt="Bib Gourmand"
+            class="w-32 h-32 p-2 shadow-2xl"
+          />
+        </div>
+      </section>
+
+      <section class="section-scroll">
+        <div class="anim-reveal">
+          <h3 class="text-3xl font-bold mb-4">Et ce n’est pas tout !</h3>
+          <p class="text-lg italic opacity-75">
+            Mais non, on ne se limite pas à ça...
+          </p>
+        </div>
+      </section>
+
+      <section class="section-scroll">
+        <div class="anim-reveal max-w-xl">
+          <p class="text-2xl leading-relaxed">
+            Tu peux vivre plus qu’une expérience gustative...
+          </p>
+          <p class="font-bold text-4xl mt-6">Un moment hors du temps</p>
+        </div>
+      </section>
+
+      <section class="section-scroll">
+        <p class="anim-reveal max-w-2xl text-2xl px-6">
+          Nous te proposons de vivre une aventure unique avec notre sélection
+          étoilée
+        </p>
+      </section>
+
+      <section class="section-scroll !min-h-[50vh]">
+        <div class="anim-reveal flex flex-col items-center gap-4">
+          <span class="text-xl uppercase tracking-widest font-semibold"
+            >À une étoile</span
+          >
+          <img src="Logo 4.svg" alt="1 Etoile" class="w-16 h-16" />
+        </div>
+      </section>
+
+      <section class="section-scroll !min-h-[50vh]">
+        <div class="anim-reveal flex flex-col items-center gap-4">
+          <span class="text-xl uppercase tracking-widest font-semibold"
+            >Deux étoiles</span
+          >
+          <div class="flex gap-4">
+            <img src="Logo 4.svg" alt="Etoile" class="w-16 h-16" />
+            <img src="Logo 4.svg" alt="Etoile" class="w-16 h-16" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-scroll !min-h-[50vh]">
+        <div class="anim-reveal flex flex-col items-center gap-4">
+          <span class="text-2xl uppercase tracking-widest font-bold"
+            >Ou trois étoiles</span
+          >
+          <div class="flex gap-4">
+            <img src="Logo 4.svg" alt="Etoile" class="w-20 h-20" />
+            <img src="Logo 4.svg" alt="Etoile" class="w-20 h-20" />
+            <img src="Logo 4.svg" alt="Etoile" class="w-20 h-20" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-scroll">
+        <p class="anim-reveal max-w-2xl text-2xl font-medium leading-relaxed">
+          Ne rate pas une miette de l’actualité des restaurants, ni des nouveaux
+          sacres
+        </p>
+      </section>
+
+      <section class="section-scroll mb-20">
+        <div class="anim-reveal max-w-3xl mb-12">
+          <p class="text-2xl font-light leading-relaxed">
+            Suis notre évolution, abonne-toi à nos réseaux sociaux et rejoins la
+            communauté des <span class="font-bold">Gourmands Raffinés</span>
+          </p>
+        </div>
+
+        <div
+          class="anim-reveal flex flex-col sm:flex-row gap-6 w-full max-w-lg px-6"
+        >
+          <a
+            href="https://www.instagram.com/michelinguide"
+            target="_blank"
+            class="cta-button flex-1 bg-white text-[#9A1727] font-bold py-5 px-8 rounded-full shadow-xl text-lg flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+            INSTAGRAM
+          </a>
+          <a
+            href="https://www.tiktok.com/@michelinguide"
+            target="_blank"
+            class="cta-button flex-1 bg-black text-white font-bold py-5 px-8 rounded-full shadow-xl text-lg flex items-center justify-center gap-3"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.7-.51 3.39-1.45 4.77-1.34 1.94-3.51 3.25-5.91 3.49-2.52.25-5.11-.47-6.95-2.14-1.84-1.67-2.81-4.14-2.58-6.66.21-2.28 1.42-4.41 3.23-5.73 1.83-1.33 4.22-1.73 6.42-1.11V11.8c-1.35-.34-2.83-.17-4.04.53-1.18.68-2.02 1.85-2.28 3.16-.27 1.35.08 2.79.91 3.86.82 1.05 2.14 1.63 3.48 1.57 1.61-.08 3.12-1.04 3.75-2.5.4-.92.51-1.95.51-2.95V.02z"
+              />
+            </svg>
+            TIKTOK
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Initialisation de ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. ANIMATION DU TRACÉ SVG (La ligne qui se dessine)
+      const path = document.querySelector("#path-guide");
+      const pathLength = path.getTotalLength();
+
+      // Configuration initiale : masquer la ligne
+      gsap.set(path, {
+        strokeDasharray: pathLength,
+        strokeDashoffset: pathLength,
+      });
+
+      // Animation au scroll
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "main",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.5, // Fluidité de suivi du scroll
+        },
+      });
+
+      // 2. ANIMATION DES SECTIONS (Fade & Slide up)
+      const itemsToReveal = document.querySelectorAll(".anim-reveal");
+
+      itemsToReveal.forEach((item) => {
+        gsap.fromTo(
+          item,
+          {
+            opacity: 0,
+            y: 60,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 85%", // Démarre quand l'item est presque visible
+              toggleActions: "play none none reverse", // Rejoue à l'envers si on remonte
+            },
+          },
+        );
+      });
+
+      // 3. EFFET DE PARALLAXE SUR LES ÉTOILES
+      gsap.utils.toArray("section img").forEach((img) => {
+        gsap.to(img, {
+          y: -20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: img,
+            scrub: true,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
